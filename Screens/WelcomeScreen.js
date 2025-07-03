@@ -1,18 +1,26 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Button, ButtonText} from 'react-native';
-import { StyleSheet } from 'react-native';
+import {View, Text, TouchableOpacity, ButtonText} from 'react-native';
+import { StyleSheet, Button, TextInput } from 'react-native';
 
 const WelcomeScreen = ({navigation}) => {
   return(
     <View style = {styles.container}>
-  <Text style = {styles.title}> Welcome to the Quiz </Text>
+  <Text style = {styles.title}> Welcome to the Quiz! </Text>
+  <TextInput style = {styles.Input}
+      placeholder="Enter your Name"
+      placeholderTextColor="white"
+  
+  />
+
+  <View style = {styles.centerContent}>
    <TouchableOpacity
    style = {styles.Button}
    onPress = {() => navigation.navigate('Quiz')}
    >
-   <Text style = {styles.ButtonText}>Let's get started </Text>
+   <Text style = {styles.ButtonText}>START </Text>
    
    </TouchableOpacity>
+      </View>
       </View>
   )
 
@@ -25,33 +33,53 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
   container:{
 flex : 1,
-justifyContent: 'center',
-backgroundColor: 'pink'
-  },
-  title: {
-fontSize: 20,
-fontWeight: 'bold',
-alignContent: 'center',
-textAlign: 'center',
-
-
-  },
-  Button: {
+justifyContent: 'flex-start',
+justifyContent: 'space-between',
 backgroundColor: 'yellow',
-borderRadius : 15,
+padding : 15,
+
+  },
+ title: {
+fontSize: 25,
+padding: 20,
+fontWeight: 'bold',
+textAlign: 'center',
+color: 'darkblue',
+ },
+ Input:{
+  fontSize: 20,
+  padding: 20,
+  width: "50%",
+backgroundColor: 'lightgrey',
+textAlign: 'center',
+color: 'black',
+alignSelf: 'center',
+ },
+
+centerContent: {
+  flex: 1,
+  padding: 20,
+  justifyContent: 'flex_start',
+  alignItems: 'center',
+  
+},
+
+  
+  Button: {
+backgroundColor: 'lightblue',
+borderRadius: 15,
 paddingVertical: 5,
 paddingHorizontal: 10,
-width: "50%",
-textAlign: 'center',
+width: "45%",
 alignItems: 'center',
 alignContent: 'center'
   },
+
   ButtonText:{
 fontSize: 20,
 fontWeight: 'bold',
 textAlign: 'center',
-justifyContent: 'center',
-alignContent: 'center'
+
   }
 
 })
