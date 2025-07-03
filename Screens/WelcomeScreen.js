@@ -1,44 +1,57 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {View, Text, TouchableOpacity, Button, ButtonText} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const WelcomeScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Quiz App</Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Quiz')}
-      >
-        <Text style={styles.buttonText}>Start Quiz</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
+const WelcomeScreen = ({navigation}) => {
+  return(
+    <View style = {styles.container}>
+  <Text style = {styles.title}> Welcome to the Quiz </Text>
+   <TouchableOpacity
+   style = {styles.Button}
+   onPress = {() => navigation.navigate('Quiz')}
+   >
+   <Text style = {styles.ButtonText}>Let's get started </Text>
+   
+   </TouchableOpacity>
+      </View>
+  )
+
+}
+
 
 export default WelcomeScreen;
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f4f4f4',
+  container:{
+flex : 1,
+justifyContent: 'center',
+backgroundColor: 'pink'
   },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginBottom: 40,
-  },
-  button: {
-    backgroundColor: '#2e86de',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-  },
-});
+fontSize: 20,
+fontWeight: 'bold',
+alignContent: 'center',
+textAlign: 'center',
 
 
+  },
+  Button: {
+backgroundColor: 'yellow',
+borderRadius : 15,
+paddingVertical: 5,
+paddingHorizontal: 10,
+width: "50%",
+textAlign: 'center',
+alignItems: 'center',
+alignContent: 'center'
+  },
+  ButtonText:{
+fontSize: 20,
+fontWeight: 'bold',
+textAlign: 'center',
+justifyContent: 'center',
+alignContent: 'center'
+  }
+
+})
