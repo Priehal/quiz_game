@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, ButtonText} from 'react-native';
-import { StyleSheet, Button, TextInput } from 'react-native';
+import { StyleSheet, Button, TextInput,Image } from 'react-native';
 
 const WelcomeScreen = ({navigation}) => {
   return(
@@ -11,7 +11,9 @@ const WelcomeScreen = ({navigation}) => {
       placeholderTextColor="white"
   
   />
-
+<Image source={require('/Users/prieyadahal/Documents/quiz_game/assets/IMG_4640.png')}
+style = {styles.image}
+/>
   <View style = {styles.centerContent}>
    <TouchableOpacity
    style = {styles.Button}
@@ -55,6 +57,11 @@ textAlign: 'center',
 color: 'black',
 alignSelf: 'center',
  },
+ image:{
+padding: 15,
+width: "70%",
+alignSelf: 'center'
+ },
 
 centerContent: {
   flex: 1,
@@ -71,8 +78,7 @@ borderRadius: 15,
 paddingVertical: 5,
 paddingHorizontal: 10,
 width: "45%",
-alignItems: 'center',
-alignContent: 'center'
+alignSelf: 'center',
   },
 
   ButtonText:{
